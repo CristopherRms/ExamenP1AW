@@ -1,0 +1,18 @@
+<form #form="ngForm" (ngSubmit)="onFormSubmitted(form)" class="row g-3">
+    <div class="col-auto">
+      <input type="text" name="name" required placeholder="Nombre" class="form-control" ngModel />
+    </div>
+    <div class="col-auto">
+      <input type="text" name="description" class="form-control" required placeholder="Descripcion" ngModel />
+    </div>
+    <div class="col-auto">
+      <input type="text" name="image" class="form-control" required placeholder="Imagen" ngModel />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Guardar cambios</button>
+    </div>
+    <div *ngIf="form.submitted && !form.valid" class="alert alert-danger" role="alert">
+      Datos Incompletos
+    </div>
+  </form>
+  
