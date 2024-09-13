@@ -14,7 +14,7 @@ export class ShowComponent {
   @Output()
   public deleteCard:EventEmitter<string>= new EventEmitter();
   @Output()
-  public editCard:EventEmitter<string>= new EventEmitter();
+  public editCard:EventEmitter<Show>= new EventEmitter();
 
   @Input()
   public show: Show={
@@ -36,6 +36,7 @@ export class ShowComponent {
     this.deleteCard.emit(this.show.name);
   }
   public editar(){
-    this.editCard.emit(this.show.name);
+    this.editCard.emit(this.show);
   }
+  
 }

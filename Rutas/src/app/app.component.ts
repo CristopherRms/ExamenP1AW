@@ -204,4 +204,15 @@ export class AppComponent {
     public setShowEditando(show: Show ): void {
         this.showEditando = show;
     }
+    public actualizaInfo(show:Show){
+      this.shows.push();
+    }
+    public onUpdateShow(updatedShow: Show) {
+      console.log(updatedShow);
+      const index = this.shows.findIndex(s => s.name === updatedShow.name);
+      if (index !== -1) {
+        this.shows[index] = updatedShow;
+      }
+      this.showEditando = null; 
+    }
   }

@@ -16,7 +16,9 @@ export class ModificarComponent {
   @Output() cancelEdit = new EventEmitter<void>();
 
   public onFormSubmitted(form: NgForm) {
+    
     if (form.valid && this.show) {
+      console.log("Editado");
       const updatedShow: Show = {
         ...this.show,
         name: form.value.name,
@@ -24,6 +26,7 @@ export class ModificarComponent {
         image: form.value.image,
       };
       this.updateShow.emit(updatedShow);
+      console.log(updatedShow);
     }
   }
 

@@ -3,13 +3,13 @@
     <app-filtros (filter)="filtrado($event)"></app-filtros>
   
     <div class="container d-flex">
-      <app-modificar *ngIf="showEditando" [show]="showEditando"></app-modificar>
+      <app-modificar *ngIf="showEditando" [show]="showEditando" (updateShow)="onUpdateShow($event)"></app-modificar>
   
       <div class="container d-flex">
         <ng-container *ngFor="let show of shows">
           <app-show [show]="show" (deleteCard)="deleteElem($event)" (editCard)="setShowEditando(show)"></app-show>
 
-        </ng-container>
+        </ng-container>  
       </div>
     </div>
   </div>
