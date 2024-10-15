@@ -1,0 +1,15 @@
+
+<div style="padding: 50px;">
+  
+  <div class="product-container" style="display: flex; flex-wrap: wrap; gap: 20px;">
+          <div class="container text-center">
+              <h2>{{producto.title}}</h2>
+              <img width="200px" height="200px" src="{{producto.image}}" alt="" style="display: block; margin: 0 auto;">
+              <h3 class="text-success">${{producto.price}}</h3>
+              <p>{{producto.category}}</p>
+              <p>{{producto.description}}</p>
+
+              <a class="btn btn-outline-success" [routerLink]="['/home']">Bacck</a>
+          </div>
+  </div>
+</div>

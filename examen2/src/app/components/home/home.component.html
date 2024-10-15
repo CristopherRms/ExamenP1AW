@@ -1,0 +1,16 @@
+
+<div style="padding: 50px;">
+  <h1 class="text-center">Store</h1>
+  <div class="product-container" style="display: flex; flex-wrap: wrap; gap: 20px;">
+      @for(item of productList; track $index){
+          <div style="border: 1px solid #a9a9a9; padding: 20px; width: calc(33.33% - 20px); box-sizing: border-box; text-align: center;">
+              <img width="150px" height="200px" src="{{item.image}}" alt="" style="display: block; margin: 0 auto;">
+              <h2>{{item.title}}</h2>
+              <h3 class="text-success">${{item.price}}</h3>
+              <a class="btn btn-outline-success" [routerLink]="['/detalles', item.id]">Details</a>
+          </div>
+      }
+  </div>
+</div>
+
+<router-outlet></router-outlet>
